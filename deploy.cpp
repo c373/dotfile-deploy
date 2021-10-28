@@ -37,9 +37,9 @@ int main( int argc, char* argv[] )
 		return 1;
 	}
 
-	if ( !fs::exists( "paths.ini" ) )
+	if ( !fs::exists( "config/paths.ini" ) )
 	{
-		std::cout << "Please ensure 'paths.ini' exists." << std::endl;
+		std::cout << "Please ensure 'config/paths.ini' exists." << std::endl;
 		return 2;
 	}
 
@@ -56,7 +56,7 @@ int main( int argc, char* argv[] )
 
 	const fs::path home = fs::path( pwd->pw_dir );
 
-	paths filePath_map = paths( "paths.ini" );
+	paths filePath_map = paths( "config/paths.ini" );
 	
 	for ( auto p : filePath_map.Config_Paths() )
 	{
